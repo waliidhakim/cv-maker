@@ -7,8 +7,16 @@ jobs:
     hello-wold : 
         runs-on: windows-latest
         steps: 
-          - uses: actions/checkout@v4
+          - name : Checkout 
+            uses : actions/checkout@v4
+          - name : Setup pnpm 
+            uses : pnpm/action-setup@v2.4.0
+            with : 
+              version : 8
+              run_installs : false  
+            
+         
           - name : install dependences
-            run: npm install
+            run: pnpm install
           - name : Build
-            run : npm run build
+            run : pnpm run build
