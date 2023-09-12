@@ -1,0 +1,14 @@
+name : Hello World
+
+on: 
+    push:
+
+jobs: 
+    hello-wold : 
+        runs-on: windows-latest
+        steps: 
+          - uses: actions/checkout@v4
+          - name : install dependences
+            run: npm install
+          - name : Build
+            run : npm run build
